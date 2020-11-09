@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    name: test
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://39.98.144.60:3306/dev?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: keijieceshi
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+  redis:
+    database: 0
+    host: 39.98.144.60
+    port: 6379
+    timeout: 10000
+    password: root
+
+server:
+  port: 6001
+
+
+mybatis:
+  type-aliases-package: com.storeWeb.model
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations:
+    - classpath:mapper/*.xml
+    - classpath*:com/**/mapper/*.xml
+
+destPath: img
+
+p12Path:  /usr/local/static/cert/apiclient_cert.p12
+#p12Path:  F:/WXPay/cert/apiclient_cert.p12
+
+swagger:
+  host:
+    url: api.whowen.com/test/storeweb
